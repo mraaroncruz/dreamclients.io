@@ -1,9 +1,9 @@
 {
   "title": "Title of the website. Update me.",
-  "url": "https://update-me.com",
-  "domain": "update-me.com",
-  "description": "Description of the website. Update me.",
-  "genre": "Insert a schema.org genre",
+  "url": "https://www.dreamclients.io",
+  "domain": "dreamclients.io",
+  "description": "Helping freelance software developers find more, better clients",
+  "genre": "BroadcastChannel",
   "googleAnalyticsId": "GA ID. Update me",
   "feed": {
     "subtitle": "Subtitle. Update me.",
@@ -11,15 +11,21 @@
     "path": "/feed/feed.xml",
     "id": "https://update-me.com"
   },
+  "podcast": {
+    "subtitle": "Helping freelance software developers find more, better clients",
+    "filename": "podcast.xml",
+    "path": "/feed/podcast.xml",
+    "id": "https://dreamclients.io/podcast"
+  },
   "jsonfeed": {
     "path": "/feed/feed.json",
     "url": "https://update-me.com/feed/feed.json"
   },
   "author": {
-    "name": "Author Name. Update me.",
-    "twitterHandle": "update_me"
+    "name": "Aaron Cruz",
+    "twitterHandle": "mraaroncruz"
   },
   "publisher": {
-    "name": "Publisher name. Update me."
+    "name": "dreamclients.io"
   }
 }

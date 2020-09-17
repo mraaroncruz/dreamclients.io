@@ -1,5 +1,5 @@
 ---
-permalink: feed/podcast.xml
+permalink: feed/podcast/atom.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -20,9 +20,9 @@ eleventyExcludeFromCollections: true
 	<entry>
 		<title>{{ podcast.data.title }}</title>
 		<link href="{{ absolutePodcastUrl }}"/>
+		<link href="{{ podcast.data.fileUrl }}" type="{{ podcast.data.fileType }}" rel="enclosure"/>
 		<updated>{{ podcast.date | rssDate }}</updated>
 		<id>{{ absolutePodcastUrl }}</id>
-		 <link href="{{ podcast.fileUrl }}" type="{{ podcast.fileType }}" rel="enclosure"/>
 		<content type="html">
 		  {{ podcast.templateContent | htmlToAbsoluteUrls(absolutePodcastUrl) }}
 			{% if googleanalytics %}
