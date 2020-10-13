@@ -4,7 +4,8 @@ title:  DreamClients - Intro To The Podcast
 permalink: https://www.dreamclients.io/podcasts/000_intro/
 categories: ['freelancing']
 date: 2020-10-13
-fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/episode-0-Podcast-Intro.mp3
+fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/000-DreamClientsPodcast-Intro.mp3
+fileSize: 4538745
 isExplicit: false
 isPublished: true
 itunesAuthor: Aaron Cruz

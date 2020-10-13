@@ -5,7 +5,8 @@
     categories: ['freelancing']
     isPublished: false
     date: 2020-10-16
-    fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/episode-0-Podcast-Intro.mp3
+    fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/001-DreamClientsPodcast-Drazen-Lucanin.mp3
+    fileSize: 43986905
     isExplicit: false
     subtitle: Dražen Lučanin gives us insights about freelancing in Vienna
     summary: Dražen Lučanin gives us insights about freelancing in Vienna

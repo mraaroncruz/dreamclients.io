@@ -33,7 +33,7 @@ const renderEpisode = (podcast, episode) => {
     categories: episode.data.categories,
     author: podcast.author,
     date: episode.date,
-    enclosure: { url: episode.data.fileUrl },
+    enclosure: { url: episode.data.fileUrl, size: episode.data.fileSize },
     itunesAuthor: podcast.author,
     itunesExplicit: episode.data.isExplicit === true,
     itunesSubtitle: episode.data.subtitle,
