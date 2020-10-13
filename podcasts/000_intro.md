@@ -8,6 +8,7 @@ fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episode
 fileSize: 4538745
 isExplicit: false
 isPublished: true
+episode: 0
 itunesAuthor: Aaron Cruz
 subtitle: An intro to the DreamClients podcast
 summary: An intro to the DreamClients podcast

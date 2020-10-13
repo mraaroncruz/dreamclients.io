@@ -37,6 +37,7 @@ const renderEpisode = (podcast, episode) => {
     itunesAuthor: podcast.author,
     itunesExplicit: episode.data.isExplicit === true,
     itunesSubtitle: episode.data.subtitle,
+    itunesEpisode: episode.data.episode,
     itunesSummary: episode.data.summary,
     itunesDuration: episode.data.durationSeconds,
     itunesNewFeedUrl: podcast.feedUrl,

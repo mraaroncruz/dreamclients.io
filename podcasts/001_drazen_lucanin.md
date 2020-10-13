@@ -4,6 +4,7 @@
     permalink: https://www.dreamclients.io/podcasts/001_drazen_lucanin/
     categories: ['freelancing']
     isPublished: false
+    episode: 1
     date: 2020-10-16
     fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/001-DreamClientsPodcast-Drazen-Lucanin.mp3
     fileSize: 43986905
