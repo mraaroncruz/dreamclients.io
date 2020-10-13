@@ -4,17 +4,17 @@
   "domain": "dreamclients.io",
   "description": "Helping freelance software developers find more, better clients",
   "genre": "BroadcastChannel",
-  "googleAnalyticsId": "GA ID. Update me",
+  "googleAnalyticsId": "UA-178282139-1",
   "feed": {
-    "subtitle": "Subtitle. Update me.",
+    "subtitle": "Helping freelance software developers find more, better clients",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://update-me.com"
+    "id": "https://dreamclients.io/blog"
   },
   "podcast": {
     "subtitle": "Helping freelance software developers find more, better clients",
-    "filename": "podcast.xml",
-    "path": "/feed/podcast.xml",
+    "filename": "rss.xml",
+    "path": "/feed/podcast/rss.xml",
     "id": "https://dreamclients.io/podcast"
   },
   "jsonfeed": {

@@ -1,0 +1,33 @@
+{
+  "title": "DreamClients - Helping Freelance Developers Find Better Clients. And More of Them",
+  "description": "",
+  "feed_url": "https://www.dreamclients.io/feed/podcast/rss.xml",
+  "site_url": "https://www.dreamclients.io",
+  "image_url": "",
+  "docs": "",
+  "author": "Aaron Cruz",
+  "managingEditor": "Aaron Cruz",
+  "webMaster": "Aaron Cruz",
+  "copyright": "2020 Aaron Cruz",
+  "language": "en",
+  "categories": ["Freelancing", "Software Development"],
+  "pubDate": "Oct 14, 2020 10:00:00 GMT",
+  "ttl": "60",
+  "itunesAuthor": "Aaron Cruz",
+  "itunesSubtitle": "",
+  "itunesSummary": "",
+  "itunesOwner": { "name": "Aaron Cruz", "email": "aaron@aaroncruz.com" },
+  "itunesExplicit": false,
+  "itunesCategory": [
+    {
+      "text": "Entertainment",
+      "subcats": [
+        {
+          "text": "Television"
+        }
+      ]
+    }
+  ],
+  "itunesImage": "",
+  "feedUrl": "https://www.dreamclients.io/feed/podcast/rss.xml"
+}
