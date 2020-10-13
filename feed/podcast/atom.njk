@@ -1,0 +1,36 @@
+---
+permalink: feed/podcast/atom.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>{{ metadata.title }}</title>
+	<subtitle>{{ metadata.podcast.subtitle }}</subtitle>
+	{% set absoluteUrl %}{{ metadata.podcast.path | url | absoluteUrl(metadata.url) }}{% endset %}
+	<link href="{{ absoluteUrl }}" rel="self"/>
+	<link href="{{ metadata.url }}"/>
+	<updated>{{ collections.podcasts | rssLastUpdatedDate }}</updated>
+	<id>{{ metadata.podcast.id }}</id>
+	<author>
+		<name>{{ metadata.author.name }}</name>
+		<email>{{ metadata.author.email }}</email>
+	</author>
+	{%- for podcast in collections.podcasts %}
+	{% set absolutePodcastUrl %}{{ podcast.url | url | absoluteUrl(metadata.url) }}{% endset %}
+	<entry>
+		<title>{{ podcast.data.title }}</title>
+		<link href="{{ absolutePodcastUrl }}"/>
+		<link href="{{ podcast.data.fileUrl }}" type="{{ podcast.data.fileType }}" rel="enclosure"/>
+		<updated>{{ podcast.date | rssDate }}</updated>
+		<id>{{ absolutePodcastUrl }}</id>
+		<content type="html">
+		  {{ podcast.templateContent | htmlToAbsoluteUrls(absolutePodcastUrl) }}
+			{% if googleanalytics %}
+				{% set titleUrlEncoded = podcast.data.title|encodeURIComponent %}
+				{% set urlUrlEncoded = podcast.url | encodeURIComponent %}
+				{{'<img src="' + metadata.url +  '/.netlify/functions/ga?v=1&_v=j83&t=pageview&dr=https%3A%2F%2Frss-feed-reader.com&_s=1&dh=' + metadata.domain + '&dp=' + urlUrlEncoded + '&ul=en-us&de=UTF-8&dt=' + titleUrlEncoded + '&tid=' + googleanalytics + '" width="1" height="1" style="display:none" alt="">'}}
+			{% endif %}
+		</content>
+	</entry>
+	{%- endfor %}
+</feed>

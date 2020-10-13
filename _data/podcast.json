@@ -1,0 +1,44 @@
+{
+  "title": "DreamClients Podcast - Find Better Clients",
+  "description": "Interviews and tips of how to find your dream clients as a software development freelancer.",
+  "feed_url": "https://www.dreamclients.io/feed/podcast/rss.xml",
+  "site_url": "https://www.dreamclients.io",
+  "image_url": "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%403x.png",
+  "docs": "",
+  "author": "dreamclients.io",
+  "managingEditor": "Aaron Cruz",
+  "webMaster": "Aaron Cruz",
+  "copyright": "2020 Aaron Cruz",
+  "language": "en",
+  "categories": ["Freelancing", "Software Development"],
+  "pubDate": "Oct 14, 2020 10:00:00 GMT",
+  "ttl": "60",
+  "itunesAuthor": "dreamclients.io",
+  "itunesSubtitle": "Interviews and tips of how to find your dream clients as a software development freelancer.",
+  "itunesSummary": "Interviews and tips of how to find your dream clients as a software development freelancer.",
+  "itunesOwner": { "name": "Aaron Cruz", "email": "aaron@aaroncruz.com" },
+  "itunesExplicit": false,
+  "itunesCategory": [
+    {
+      "text": "Education",
+      "subcats": [
+        {
+          "text": "How To"
+        }
+      ]
+    },
+    {
+      "text": "Business",
+      "subcats": [
+        {
+          "text": "Careers"
+        }
+      ]
+    },
+    {
+      "text": "Technology"
+    }
+  ],
+  "itunesImage": "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%403x.png",
+  "feedUrl": "https://www.dreamclients.io/feed/podcast/rss.xml"
+}

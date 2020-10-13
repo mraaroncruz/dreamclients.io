@@ -45,6 +45,7 @@ const { promisify } = require("util");
 const fs = require("fs");
 const hasha = require("hasha");
 const readFile = promisify(require("fs").readFile);
+const yaml = require("js-yaml");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -55,6 +56,9 @@ const CleanCSS = require("clean-css");
 const GA_ID = require("./_data/metadata.json").googleAnalyticsId;
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addDataExtension("yaml", (contents) =>
+    yaml.safeLoad(contents)
+  );
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
@@ -167,7 +171,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    templateFormats: ["md", "njk", "html", "liquid"],
+    templateFormats: ["md", "njk", "html", "liquid", "11ty.js"],
 
     // If your site lives in a different subdirectory, change this.
     // Leading or trailing slashes are all normalized away, so don’t worry about those.
