@@ -15,7 +15,9 @@ class PodcastFeed {
 
   genPodcast(podcastData, episodes) {
     const podcast = new Podcast(podcastData);
-    episodes
+    let orderedEpisodes = [...episodes];
+    orderedEpisodes.reverse();
+    orderedEpisodes
       .filter((episode) => episode.data.isPublished)
       .forEach((episode) => {
         podcast.addItem(renderEpisode(podcastData, episode));
