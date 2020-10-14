@@ -5,6 +5,9 @@ fields:
 - type: list
   name: tags
   label: tags
+  hidden: false
+  config:
+    use_select: false
 - type: text
   name: title
   label: title
@@ -19,22 +22,23 @@ fields:
   label: date
 - type: textarea
   name: fileUrl
-  label: fileUrl
+  label: file url
 - type: number
   name: fileSize
-  label: fileSize
+  label: file size
 - type: boolean
   name: isExplicit
-  label: isExplicit
+  label: explicit?
 - type: boolean
   name: isPublished
-  label: isPublished
+  label: published?
 - type: number
   name: episode
-  label: episode
+  label: episode number
 - type: text
   name: itunesAuthor
   label: itunesAuthor
+  hidden: true
 - type: text
   name: subtitle
   label: subtitle
@@ -43,4 +47,4 @@ fields:
   label: summary
 - type: number
   name: durationSeconds
-  label: durationSeconds
+  label: duration in seconds
