@@ -1,0 +1,46 @@
+---
+label: Podcast Episode
+hide_body: false
+fields:
+- type: list
+  name: tags
+  label: tags
+- type: text
+  name: title
+  label: title
+- type: text
+  name: permalink
+  label: permalink
+- type: list
+  name: categories
+  label: categories
+- type: datetime
+  name: date
+  label: date
+- type: textarea
+  name: fileUrl
+  label: fileUrl
+- type: number
+  name: fileSize
+  label: fileSize
+- type: boolean
+  name: isExplicit
+  label: isExplicit
+- type: boolean
+  name: isPublished
+  label: isPublished
+- type: number
+  name: episode
+  label: episode
+- type: text
+  name: itunesAuthor
+  label: itunesAuthor
+- type: text
+  name: subtitle
+  label: subtitle
+- type: text
+  name: summary
+  label: summary
+- type: number
+  name: durationSeconds
+  label: durationSeconds
