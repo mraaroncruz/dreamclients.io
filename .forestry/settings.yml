@@ -5,9 +5,18 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: podcasts
+  label: Podcasts
+  create: all
+  match: "**/*"
+- type: directory
   path: posts
   label: Posts
   create: all
+  match: "**/*"
+- type: document
+  path: _data/podcast.json
+  label: Podcast Settings
   match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
