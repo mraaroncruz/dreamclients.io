@@ -3,7 +3,7 @@
   "description": "Interviews and tips of how to find your dream clients as a software development freelancer.",
   "feed_url": "https://www.dreamclients.io/feed/podcast/rss.xml",
   "site_url": "https://www.dreamclients.io",
-  "image_url": "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%403x.png",
+  "image_url": "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%406x.png",
   "docs": "",
   "author": "dreamclients.io",
   "managingEditor": "Aaron Cruz",
@@ -39,6 +39,6 @@
       "text": "Technology"
     }
   ],
-  "itunesImage": "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%403x.png",
+  "itunesImage": "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%406x.png",
   "feedUrl": "https://www.dreamclients.io/feed/podcast/rss.xml"
 }
