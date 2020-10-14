@@ -48,3 +48,5 @@ fields:
 - type: number
   name: durationSeconds
   label: duration in seconds
+pages:
+- podcasts/manual-maly.md
