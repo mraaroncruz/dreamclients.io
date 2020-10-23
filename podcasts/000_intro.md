@@ -6,7 +6,6 @@ categories: ['freelancing']
 date: 2020-10-13
 fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/000-DreamClientsPodcast-Intro.mp3
 fileSize: 4538745
-isExplicit: false
 isPublished: true
 episode: 0
 itunesAuthor: Aaron Cruz
