@@ -53,7 +53,14 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const localImages = require("./third_party/eleventy-plugin-local-images/.eleventy.js");
 const CleanCSS = require("clean-css");
+const mjml2html = require("mjml");
 const GA_ID = require("./_data/metadata.json").googleAnalyticsId;
+
+const Liquid = require("liquidjs");
+const engine = new Liquid();
+const layoutPath = "_includes/layouts/email_html.mjml.liquid";
+const emailTemplateLiquid = fs.readFileSync(layoutPath, "utf8");
+const emailTemplate = engine.parse(emailTemplateLiquid);
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) =>
@@ -124,6 +131,13 @@ module.exports = function (eleventyConfig) {
     }
 
     return array.slice(0, n);
+  });
+
+  eleventyConfig.addNunjucksAsyncFilter("mjmlify", (emailIssue, cb) => {
+    engine.render(emailTemplate, emailIssue.data).then((output) => {
+      const html = mjml2html(output).html;
+      cb(null, html);
+    });
   });
 
   eleventyConfig.addPassthroughCopy("img");

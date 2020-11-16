@@ -1,0 +1,31 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.email
+  size: 1
+  alias: issue
+permalink: "freelancer_weekly/{{ issue.fileSlug | slug }}/email.txt"
+layout: false
+---
+{{ issue.title }}
+
+## {{ issue.data.header.title }}
+
+{{ issue.data.header.body }}
+
+## Main Article ###
+
+{{ issue.data.main_article.title }}
+
+{{ issue.data.main_article.body }}
+
+## This Week's Articles
+{% for article in issue.data.featured_articles %}
+### {{ article.title }}
+{{ article.link }}
+
+{{ article.body }}
+{% endfor %}
+
+See you next week!
+Aaron

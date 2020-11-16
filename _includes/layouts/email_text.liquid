@@ -1,0 +1,21 @@
+{{ title }}
+
+## {{ header.title }}
+
+{{ header.body }}
+
+## Main Article
+### {{ main_article.title }}
+
+{{ main_article.body }}
+
+## This Week's Articles
+{% for article in featured_articles %}
+### {{ article.title }}
+{{ article.link }}
+
+{{ article.body }}
+{% endfor %}
+
+See you next week!
+Aaron

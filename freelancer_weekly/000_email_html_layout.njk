@@ -1,0 +1,10 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.email
+  size: 1
+  alias: issue
+permalink: "freelancer_weekly/{{ issue.fileSlug | slug }}/email-html/index.html"
+layout: false
+---
+{{ issue | mjmlify | safe }}

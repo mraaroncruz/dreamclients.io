@@ -1,0 +1,17 @@
+header:
+  title: This is the header title for number 2!
+  body: This is the body of the header
+
+main_article:
+  title: This is the main article
+  body: |
+    When I am writing a main article, this is what I come up with.
+
+featured_articles:
+  - title: Article one title
+    body: This is the description of the first article
+    link: https://aaroncruz.com/
+
+  - title: Article two title
+    body: This is the description of the second article
+    link: https://aaroncruz.com/

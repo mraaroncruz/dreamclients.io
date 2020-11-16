@@ -1,0 +1,25 @@
+<mjml>
+  <mj-head>
+    <mj-title>Hello world</mj-title>
+    <mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:300,500"></mj-font>
+    <mj-attributes>
+      <mj-all font-family="Roboto, Helvetica, sans-serif"></mj-all>
+      <mj-text font-weight="300" font-size="16px" color="#616161" line-height="24px"></mj-text>
+      <mj-section padding="0px"></mj-section>
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    {% for article in featured_articles %}
+    <mj-section>
+      <mj-column width="100%">
+        <mj-text>
+          <h3 style="font-weight: bold; margin-top: 0; margin-bottom: 0"> <a href="{{ article.url }}" style="color: #3498DB; text-decoration: none">
+            {{ article.link }}
+            </a> </h3>
+          <p style="font-size: 14px">{{ article.body }}</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    {% endfor %}
+  </mj-body>
+</mjml>

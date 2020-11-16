@@ -1,0 +1,4 @@
+{
+  "layout": "layouts/email_permalink.liquid",
+  "tags": ["email"]
+}
