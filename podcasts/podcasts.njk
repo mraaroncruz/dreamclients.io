@@ -1,0 +1,31 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.podcasts
+  size: 7
+  alias: podcast
+permalink: "podcasts/index.html"
+layout: "layouts/base.njk"
+---
+
+{% block javascript_head %}
+  <script src="//cdn.podlove.org/web-player/5.x/embed.js"></script>
+{% endblock %}
+
+<h1 class="max-w-screen-lg m-auto mb-12 text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">All Episodes</h1>
+
+{% for podcast in collections.publishedPodcasts %}
+  <section class="mb-24 max-w-screen-lg m-auto">
+    <div class="episode">
+      <div class="latest">
+        <h2 class="text-4xl">{{ podcast.data.title }}</h2>
+
+        <p class="mb-4 text-normal text-md sm:text-md font-medium text-gray-600 dark:text-gray-400 mt-2">
+          {{ podcast.data.summary }}
+        </p>
+
+        {% podcastPlayer podcast %}
+      </div>
+    </div>
+  </section>
+{% endfor %}

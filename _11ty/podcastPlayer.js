@@ -1,3 +1,5 @@
+const { DateTime, Duration } = require("luxon");
+
 module.exports = (podcast) => {
   const id = `episode_${podcast.fileSlug}`;
   const payload = {
@@ -6,6 +8,7 @@ module.exports = (podcast) => {
       poster:
         "https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/images/dreamclients-podcast-logo-square-1%406x.png",
     },
+    duration: timeStamp(podcast.data.durationSeconds),
     title: podcast.data.title,
     subtitle: podcast.data.subtitle,
     summary: podcast.data.summary,
@@ -30,4 +33,8 @@ module.exports = (podcast) => {
   `;
 
   return template;
+};
+
+const timeStamp = (seconds) => {
+  return Duration.fromObject({ seconds }).toFormat("hh:mm:ss");
 };
