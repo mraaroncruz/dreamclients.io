@@ -1,0 +1,114 @@
+---
+permalink: /podcast/
+layout: layouts/home.njk
+---
+
+{% block javascript_head %}
+  <script src="//cdn.podlove.org/web-player/5.x/embed.js"></script>
+{% endblock %}
+
+{% set latest = collections.latestPodcast %}
+{% set previous = collections.previousPodcast %}
+
+<section class="jumbotron h-96 min-h-screen">
+  <div class="flex items-center h-full">
+    <div class="jumbo-container">
+      <div class="grid grid-cols-1 gap-x-16 md:grid-cols-8 flex items-center">
+        <div class="jumbotron-text col-span-4">
+          <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">Learn how to find Dream Clients from Professionals</h1>
+          <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+            A podcast for freelance software developers who want to improve their business.
+          </p>
+          <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+            We talk with long time freelancers about finding more clients, marketing, sales and how to run your freelance business
+          </p>
+        </div>
+
+        <div></div>
+
+        <div class="jumbotron-image col-span-3">
+          <img class="w-full" src="/img/logo-podcast.svg" />
+        </div>
+      </div>
+
+      <div class="where mt-12">
+        <h2 class="text-xl font-bold">Where to find us</h2>
+        <div class="mt-8 grid grid-cols-1 gap-x-16 md:grid-cols-5 flex items-center">
+          <div class="w-full text-center">
+            <span class="text-md font-bold">iTunes</span>
+          </div>
+          <div class="w-full text-center">
+            <span class="text-md font-bold">Spotify</span>
+          </div>
+          <div class="w-full text-center">
+            <span class="text-md font-bold">PocketCasts</span>
+          </div>
+          <div class="w-full text-center">
+            <span class="text-md font-bold">Overcast</span>
+          </div>
+          <div class="w-full text-center">
+            <span class="text-md font-bold">RSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="subscribe-now" class="py-12">
+  <div class="text-center flex items-center justify-center">
+    <div>
+      <h2 class="mb-4 text-3xl sm:text-4xl text-gray-800 dark:text-white font-extrabold tracking-tight">Get Instant Updates</h2>
+      <p class="mb-4 text-normal text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+        Get practical tips via email and updates for when new episodes come out.
+      </p>
+      <a class="inline-block md:w-48 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-4 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300" href="#">Subscribe Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="pt-24 pb-12 max-w-screen-lg m-auto">
+  <div class="episode mb-24">
+    <h3 class="mb-4 text-3xl sm:text-2xl text-indigo-600 dark:text-white font-bold tracking-tight">Latest Episode</h3>
+
+    <div class="latest">
+      <h2 class="text-4xl">{{ latest.data.title }}</h2>
+
+      <p class="mb-4 text-normal text-md sm:text-md font-medium text-gray-600 dark:text-gray-400 mt-2">
+        {{ latest.data.summary }}
+      </p>
+
+      {% podcastPlayer latest %}
+    </div>
+  </div>
+
+  <div class="episode mb-12">
+    <h3 class="mb-4 text-3xl sm:text-2xl text-indigo-600 dark:text-white font-bold tracking-tight">Previous Episode</h3>
+
+    <div class="previous">
+      <h2 class="text-4xl">{{ previous.data.title }}</h2>
+
+      <p class="mb-4 text-normal text-md sm:text-md font-medium text-gray-600 dark:text-gray-400 mt-2">
+        {{ previous.data.summary }}
+      </p>
+
+      {% podcastPlayer previous %}
+    </div>
+  </div>
+</section>
+
+<section id="subscribe-now" class="py-12">
+  <div class="text-center flex items-center justify-center">
+    <div>
+      <h2 class="mb-4 text-3xl sm:text-4xl text-gray-800 dark:text-white font-extrabold tracking-tight">
+
+        <a href="/podcasts/" class="flex items-center">
+          <span class="mr-2">All Episodes</span>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 0C8.08257 0 5.28463 1.13422 3.22219 3.15386C1.15877 5.17261 0 7.91116 0 10.7667C0 13.6223 1.1588 16.3609 3.22219 18.3796C5.28468 20.3992 8.08257 21.5334 11 21.5334C13.9174 21.5334 16.7154 20.3992 18.7778 18.3796C20.8412 16.3608 22 13.6223 22 10.7667C22 7.91116 20.8412 5.17256 18.7778 3.15386C16.7153 1.1342 13.9174 0 11 0V0ZM14.1562 11.7593L9.78143 16.0413C9.2459 16.5655 8.37748 16.5646 7.84196 16.0404C7.30733 15.5153 7.30733 14.6662 7.84377 14.1421L11.2938 10.7667L7.84377 7.39143C7.30734 6.86726 7.30734 6.01814 7.84196 5.49309C8.37748 4.96892 9.2459 4.96804 9.78143 5.49221L14.1562 9.77419C14.4249 10.0363 14.5705 10.3958 14.5569 10.7667V10.8101C14.5569 11.1661 14.4131 11.507 14.1562 11.7593V11.7593Z" fill="#6C63FF"/>
+          </svg>
+        </a>
+      </h2>
+    </div>
+  </div>
+</section>

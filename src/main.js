@@ -18,7 +18,6 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-
 const exposed = {};
 if (location.search) {
   var a = document.createElement("a");
@@ -216,14 +215,14 @@ addEventListener("click", (e) => {
 // - it only means potentially more costly layouts for that image.
 // - And so it isn't worth the querySelectorAll it would cost to synchronously check
 //   load state.
-document.body.addEventListener(
-  "load",
-  (e) => {
-    if (e.target.tagName != "IMG") {
-      return;
-    }
-    // Ensure the browser doesn't try to draw the placeholder when the real image is present.
-    e.target.style.backgroundImage = "none";
-  },
-  /* capture */ "true"
-);
+// document.body.addEventListener(
+//   "load",
+//   (e) => {
+//     if (e.target.tagName != "IMG") {
+//       return;
+//     }
+//     // Ensure the browser doesn't try to draw the placeholder when the real image is present.
+//     e.target.style.backgroundImage = "none";
+//   },
+//   /* capture */ "true"
+// );

@@ -54,8 +54,8 @@ async function resize(filename, width, format) {
     await sharp("_site" + filename)
       .resize(width)
       [format]({
-        quality: 60,
-        reductionEffort: 6,
+        quality: 90,
+        // reductionEffort: 6,
       })
       .toFile("_site" + out);
   }

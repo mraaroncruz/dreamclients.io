@@ -40,6 +40,8 @@ const csso = require("csso");
 const purifyCss = async (rawContent, outputPath) => {
   let content = rawContent;
   if (
+    // MAYBE FIX ME?
+    false &&
     outputPath &&
     outputPath.endsWith(".html") &&
     !isAmp(content) &&
@@ -110,9 +112,9 @@ const optimizeAmp = async (rawContent, outputPath) => {
 module.exports = {
   initArguments: {},
   configFunction: async (eleventyConfig, pluginOptions = {}) => {
-    eleventyConfig.addTransform("purifyCss", purifyCss);
-    eleventyConfig.addTransform("minifyHtml", minifyHtml);
-    eleventyConfig.addTransform("optimizeAmp", optimizeAmp);
+    // eleventyConfig.addTransform("purifyCss", purifyCss);
+    // eleventyConfig.addTransform("minifyHtml", minifyHtml);
+    // eleventyConfig.addTransform("optimizeAmp", optimizeAmp);
   },
 };
 

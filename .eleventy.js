@@ -43,6 +43,7 @@
 const { DateTime } = require("luxon");
 const { promisify } = require("util");
 const fs = require("fs");
+const exec = promisify(require("child_process").exec);
 const hasha = require("hasha");
 const readFile = promisify(require("fs").readFile);
 const yaml = require("js-yaml");
@@ -55,6 +56,7 @@ const localImages = require("./third_party/eleventy-plugin-local-images/.elevent
 const CleanCSS = require("clean-css");
 const mjml2html = require("mjml");
 const GA_ID = require("./_data/metadata.json").googleAnalyticsId;
+const podcastPlayer = require("./_11ty/podcastPlayer");
 
 const Liquid = require("liquidjs");
 const engine = new Liquid();
@@ -84,21 +86,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require("./_11ty/csp.js"));
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-  eleventyConfig.addNunjucksAsyncFilter("addHash", function (
-    absolutePath,
-    callback
-  ) {
-    readFile(`_site${absolutePath}`, {
-      encoding: "utf-8",
-    })
-      .then((content) => {
-        return hasha.async(content);
+  eleventyConfig.addNunjucksAsyncFilter(
+    "addHash",
+    function (absolutePath, callback) {
+      readFile(`_site${absolutePath}`, {
+        encoding: "utf-8",
       })
-      .then((hash) => {
-        callback(null, `${absolutePath}?hash=${hash.substr(0, 10)}`);
-      })
-      .catch((error) => callback(error));
-  });
+        .then((content) => {
+          return hasha.async(content);
+        })
+        .then((hash) => {
+          callback(null, `${absolutePath}?hash=${hash.substr(0, 10)}`);
+        })
+        .catch((error) => callback(error));
+    }
+  );
 
   eleventyConfig.addFilter("lastModifiedDate", function (filename) {
     const stats = fs.statSync(filename);
@@ -183,6 +185,51 @@ module.exports = function (eleventyConfig) {
     ui: false,
     ghostMode: false,
   });
+
+  // eleventyConfig.on("afterBuild", async () => {
+  //   try {
+  //     const { stdout, stderr } = await exec(
+  //       "npx tailwindcss-cli@latest build src/tailwind.css -o ./_site/css/main.css"
+  //     );
+  //     // the *entire* stdout and stderr (buffered)
+  //     console.log(`stdout: ${stdout}`);
+  //     console.log(`stderr: ${stderr}`);
+  //   } catch (err) {
+  //     //some err occurred
+  //     console.error(err);
+  //   }
+  // });
+
+  eleventyConfig.addCollection("latestPodcast", function (collection) {
+    let filtered = collection
+      .getFilteredByTag("podcasts")
+      .filter((item) => item.data.isPublished);
+    filtered.reverse();
+    return filtered[0];
+  });
+
+  eleventyConfig.addCollection("previousPodcast", function (collection) {
+    let filtered = collection
+      .getFilteredByTag("podcasts")
+      .filter((item) => item.data.isPublished);
+
+    if (filtered.length > 1) {
+      filtered.reverse();
+      return filtered[1];
+    }
+
+    return null;
+  });
+
+  eleventyConfig.addCollection("publishedPodcasts", function (collection) {
+    let filtered = collection
+      .getFilteredByTag("podcasts")
+      .filter((item) => item.data.isPublished);
+    filtered.reverse();
+    return filtered;
+  });
+
+  eleventyConfig.addShortcode("podcastPlayer", podcastPlayer);
 
   return {
     templateFormats: ["md", "njk", "html", "liquid", "11ty.js"],

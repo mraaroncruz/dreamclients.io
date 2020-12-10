@@ -1,8 +1,8 @@
 ---
-tags: ['podcasts']
-title:  DreamClients - Intro To The Podcast
-permalink: https://www.dreamclients.io/podcasts/000_intro/
-categories: ['freelancing']
+tags: ["podcasts"]
+title: DreamClients - Intro To The Podcast
+permalink: /podcasts/000_intro/
+categories: ["freelancing"]
 date: 2020-10-13
 fileUrl: https://dreamclients-podcast.s3.eu-west-3.amazonaws.com/podcast/episodes/000-DreamClientsPodcast-Intro.mp3
 fileSize: 4538745
@@ -22,7 +22,7 @@ The goal of the dream clients podcast is to help freelance software developers o
 
 My name’s Aaron Cruz and I have been freelancing as a software developer, mostly remotely, in all kinds of stacks and industries for over a decade.
 
-I’ve made all of the mistakes and felt the pain of most of the downsides of freelancing. But I also have learned from them and consistently improved my profit, work life balance and customer base year after year. 
+I’ve made all of the mistakes and felt the pain of most of the downsides of freelancing. But I also have learned from them and consistently improved my profit, work life balance and customer base year after year.
 
 I am based in Vienna Austria in central Europe which may be relevant because some of the content will be a little more Central European based, like dealing with taxes, and a lot of the guests will be from the area. But almost all the concepts should translate well to most of the world.
 

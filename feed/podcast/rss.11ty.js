@@ -31,7 +31,7 @@ const renderEpisode = (podcast, episode) => {
   return {
     title: episode.data.title,
     description: episode.templateContent,
-    url: episode.data.permalink,
+    url: `https://www.dreamclients.io${episode.data.permalink}`,
     categories: episode.data.categories,
     author: podcast.author,
     date: episode.date,
