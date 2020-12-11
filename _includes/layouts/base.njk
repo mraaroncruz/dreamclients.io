@@ -81,8 +81,13 @@
           <img class="h-8 block w-auto" src="/img/logo-horizontal.svg" />
           <ul class="flex">
             <li class="mr-4 font-bold"><a href="/">Home</a></li>
+            <li class="mr-4 font-bold"><a href="/podcast">Podcast</a></li>
             <li class="mr-4 font-bold"><a href="/podcasts">Episodes</a></li>
-            <li><a class="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-4 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300" href="#subscribe-now">Subscribe Now</a></li>
+            <li>
+              <a class="cta-btn" href="#subscribe-now">
+                Subscribe Now
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -94,7 +99,7 @@
       {% endblock %}
     </main>
 
-    <footer>
+    <footer class="container m-auto">
       <a href="/about/">{{ metadata.author.name }}</a>
     </footer>
 
@@ -108,5 +113,7 @@
         <img src="/.netlify/functions/ga?v=1&_v=j83&t=pageview&dr=https%3A%2F%2Fno-script.com&_s=1&dh={{ metadata.domain | encodeURIComponent }}&dp={{ page.url | encodeURIComponent }}&ul=en-us&de=UTF-8&dt={{title|encodeURIComponent}}&tid={{googleanalytics}}" width="1" height="1" style="display:none" alt="">
       </noscript>
     {% endif %}
+    {% block javascript_tail %}
+    {% endblock %}
   </body>
 </html>

@@ -1,0 +1,17 @@
+podcast:
+  rss_links:
+    - name: Spotify
+      icon: /img/icons/itunes.png
+      link: https://open.spotify.com/show/1FlTAdMfzTXtCPFhVo7z5s
+    - name: iTunes
+      icon: /img/icons/itunes.png
+      link: https://podcasts.apple.com/at/podcast/dreamclients-podcast-find-better-clients/id1535759707?l=en
+    - name: PocketCasts
+      icon: /img/icons/itunes.png
+      link: https://pca.st/1dotgeqg
+    - name: Overcast
+      icon: /img/icons/itunes.png
+      link: https://www.dreamclients.io/feed/podcast/rss.xml
+    - name: RSS
+      icon: /img/icons/itunes.png
+      link: https://www.dreamclients.io/feed/podcast/rss.xml

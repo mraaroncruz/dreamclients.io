@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+.btn {
+  @apply px-4 py-2 bg-blue-600 text-white rounded;
+}
+
+.cta-btn {
+  @apply md:w-32 bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300;
+}
+
+.cta-btn-lg {
+  @apply inline-block md:w-48 bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300;
+}
+
+@tailwind utilities;

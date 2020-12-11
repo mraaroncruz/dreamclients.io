@@ -28,7 +28,9 @@ module.exports = (podcast) => {
     <div id="${id}" data-variant="m"></div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
         window.podlovePlayer("#${id}", ${serialized});
+      })
     </script>
   `;
 
