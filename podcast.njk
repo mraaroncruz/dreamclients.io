@@ -10,37 +10,40 @@ layout: layouts/home.njk
 {% set latest = collections.latestPodcast %}
 {% set previous = collections.previousPodcast %}
 
-<section class="jumbotron h-96 min-h-screen">
-  <div class="flex items-center h-full">
+<section class="jumbotron lg:h-96 lg:min-h-screen">
+  <div class="lg:flex lg:items-center h-full">
     <div class="jumbo-container">
-      <div class="grid grid-cols-1 gap-x-16 md:grid-cols-8 flex items-center">
-        <div class="jumbotron-text col-span-4">
-          <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">Learn how to find Dream Clients from Professionals</h1>
-          <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+      <div class="lg:grid lg:grid-cols-1 lg:gap-x-16 lg:grid-cols-8 lg:items-center">
+        <div class="block max-w-xs my-12 lg:hidden jumbotron-image">
+          <img class="w-full" src="/img/logo-podcast.svg" />
+        </div>
+        <div class="jumbotron-text mb-8 lg:mb-0 lg:col-span-4">
+          <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold">Learn how to find Dream Clients from Professionals</h1>
+          <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-4">
             A podcast for freelance software developers who want to improve their business.
           </p>
           <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
-            We talk with long time freelancers about finding more clients, marketing, sales and how to run your freelance business
+            We talk with long time freelancers about finding more clients, marketing, sales and how to run your freelance business.
           </p>
         </div>
 
-        <div></div>
+        <div class="hidden lg:block"></div>
 
-        <div class="jumbotron-image col-span-3">
+        <div class="hidden lg:block jumbotron-image col-span-3">
           <img class="w-full" src="/img/logo-podcast.svg" />
         </div>
       </div>
 
       <div class="where mt-12">
         <h2 class="text-xl font-bold">Where to find us</h2>
-        <div class="mt-8 grid grid-cols-1 gap-x-16 md:grid-cols-{{ sharing.podcast.rss_links.length }} flex items-center">
+        <div class="mt-8 grid gap-x-8 md:gap-x-24 lg:gap-x-32 grid-cols-{{ sharing.podcast.rss_links.length }}">
           {% for link in sharing.podcast.rss_links %}
             <a href="{{ link.link }}" target="_blank">
               <div class="w-full text-center flex items-center flex-col">
-                <div class="w-16 h-16 mb-8">
+                <div class="w-full mb-8">
                   {{ link.icon | safe }}
                 </div>
-                <span class="text-md font-bold">{{ link.name }}</span>
+                <span class="text-sm lg:text-md font-bold">{{ link.name }}</span>
               </div>
             </a>
           {% endfor %}
@@ -50,7 +53,7 @@ layout: layouts/home.njk
   </div>
 </section>
 
-<section id="subscribe-now" class="py-12">
+<section id="subscribe-now" class="py-20 lg:py-12 lg:mb-32">
   <div class="text-center flex items-center justify-center">
     <div>
       <h2 class="mb-4 text-3xl sm:text-4xl text-gray-800 dark:text-white font-extrabold tracking-tight">Get Instant Updates</h2>
@@ -62,12 +65,12 @@ layout: layouts/home.njk
   </div>
 </section>
 
-<section class="pt-24 pb-12 max-w-screen-lg m-auto">
+<section class="pb-12 lg:max-w-screen-lg mx-auto">
   <div class="episode mb-24">
-    <h3 class="mb-4 text-3xl sm:text-2xl text-indigo-600 dark:text-white font-bold tracking-tight">Latest Episode</h3>
+    <h3 class="mb-4 text-lg sm:text-2xl text-indigo-600 dark:text-white font-bold tracking-tight">Latest Episode</h3>
 
     <div class="latest">
-      <h2 class="text-4xl">{{ latest.data.title }}</h2>
+      <h2 class="text-xl lg:text-2xl">{{ latest.data.title }}</h2>
 
       <p class="mb-4 text-normal text-md sm:text-md font-medium text-gray-600 dark:text-gray-400 mt-2">
         {{ latest.data.summary }}
@@ -77,11 +80,11 @@ layout: layouts/home.njk
     </div>
   </div>
 
-  <div class="episode mb-12">
-    <h3 class="mb-4 text-3xl sm:text-2xl text-indigo-600 dark:text-white font-bold tracking-tight">Previous Episode</h3>
+  <div class="episode">
+    <h3 class="mb-4 text-lg sm:text-2xl text-indigo-600 dark:text-white font-bold tracking-tight">Previous Episode</h3>
 
     <div class="previous">
-      <h2 class="text-4xl">{{ previous.data.title }}</h2>
+      <h2 class="text-xl lg:text-2xl">{{ previous.data.title }}</h2>
 
       <p class="mb-4 text-normal text-md sm:text-md font-medium text-gray-600 dark:text-gray-400 mt-2">
         {{ previous.data.summary }}

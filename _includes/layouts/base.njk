@@ -71,16 +71,34 @@
     <script csp-hash>if (/Mac OS X/.test(navigator.userAgent))document.documentElement.classList.add('apple')</script>
     <!-- css is inserted by optimize-html custom plugin -->
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var hamburger = document.getElementById("hamburger");
+        var mobileMenu = document.getElementById("mobile-menu");
+        hamburger.addEventListener("click", function(e) {
+          e.preventDefault();
+          mobileMenu.classList.toggle("hidden");
+        });
+      })
+    </script>
+
     {% block javascript_head %}
     {% endblock %}
   </head>
-  <body class="px-8 md:px-0 flex flex-col h-full justify-between">
-    <div class="top-wrapper">
-      <header class="px-4 py-4">
-        <div class="container m-auto">
+  <body class="px-4 sm:px-8 flex flex-col h-full justify-between">
+    <div class="top-wrapper lg:max-w-screen-lg mx-auto">
+      <header class="py-4">
+        <div class="container mx-auto">
           <nav class="main-nav h-10 flex items-center justify-between">
             <img class="h-8 block w-auto" src="/img/logo-horizontal.svg" />
-            <ul class="flex">
+            <a href="#" id="hamburger" class="md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>ic_menu_48px</title>
+                <g fill="#111111">
+                    <path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"></path>
+                </g>
+              </svg>
+            </a>
+            <ul class="hidden md:flex">
               <li class="mr-4 font-bold"><a href="/">Home</a></li>
               <li class="mr-4 font-bold"><a href="/podcast">Podcast</a></li>
               <li class="mr-4 font-bold"><a href="/podcasts">Episodes</a></li>
@@ -91,22 +109,32 @@
               </li>
             </ul>
           </nav>
+          <ul id="mobile-menu" class="flex flex-col hidden mt-8 md:hidden">
+            <li class="mb-4 font-bold"><a href="/">Home</a></li>
+            <li class="mb-4 font-bold"><a href="/podcast">Podcast</a></li>
+            <li class="mb-8 font-bold"><a href="/podcasts">Episodes</a></li>
+            <li>
+              <a class="cta-btn" href="#subscribe-now">
+                Subscribe Now
+              </a>
+            </li>
+          </ul>
         </div>
       </header>
 
-      <main class="container m-auto">
+      <main class="container mx-auto">
         {% block article %}
           {{ content | safe }}
         {% endblock %}
       </main>
     </div>
 
-    <footer class="container mx-auto pb-12 grid grid-cols-1 md:grid-cols-4">
-      <div class="logo">
+    <footer class="container mx-auto pb-12 lg:flex lg:justify-between">
+      <div class="logo mb-8 lg:mb-0">
         <img src="/img/logo-vertical.svg" />
         <p>&copy; Square Bracket eU <script>document.write((new Date()).getFullYear())</script></p>
       </div>
-      <div class="nav-links">
+      <div class="nav-links mb-8 lg:mb-0">
         <h4 class="mb-2 text-base sm:text-base text-indigo-600 dark:text-white font-bold tracking-tight">Site Links</h4>
         <ul>
           <li class="mb-2 font-bold"><a href="/">Home</a></li>
@@ -114,7 +142,7 @@
           <li class="mb-2 font-bold"><a href="/podcasts">Episodes</a></li>
         </ul>
       </div>
-      <div class="nav-rss">
+      <div class="nav-rss mb-12 lg:mb-0">
         <h4 class="mb-4 text-base sm:text-base text-indigo-600 dark:text-white font-bold tracking-tight">Subscribe to the Podcast</h4>
         <ul>
           {% for link in  sharing.podcast.rss_links %}
@@ -127,7 +155,7 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="cta">
+      <div class="cta self-auto">
         <a class="cta-btn" href="#subscribe-now">
           Subscribe Now
         </a>

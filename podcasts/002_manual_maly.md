@@ -1,7 +1,7 @@
 ---
 tags:
   - podcasts
-title: Manual Maly
+title: 002 - Manual Maly
 episode: "2"
 season: "1"
 permalink: /podcasts/002_manual_maly
