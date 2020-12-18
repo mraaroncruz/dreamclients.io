@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"
+<html class="h-full" lang="en"
     domain="{{ metadata.domain }}"
     {% if googleanalytics %}
     ga-id="{{ googleanalytics }}"
@@ -74,45 +74,77 @@
     {% block javascript_head %}
     {% endblock %}
   </head>
-  <body class="px-8 md:px-0">
-    <header class="px-4 py-4">
-      <div class="container m-auto">
-        <nav class="main-nav h-10 flex items-center justify-between">
-          <img class="h-8 block w-auto" src="/img/logo-horizontal.svg" />
-          <ul class="flex">
-            <li class="mr-4 font-bold"><a href="/">Home</a></li>
-            <li class="mr-4 font-bold"><a href="/podcast">Podcast</a></li>
-            <li class="mr-4 font-bold"><a href="/podcasts">Episodes</a></li>
-            <li>
-              <a class="cta-btn" href="#subscribe-now">
-                Subscribe Now
+  <body class="px-8 md:px-0 flex flex-col h-full justify-between">
+    <div class="top-wrapper">
+      <header class="px-4 py-4">
+        <div class="container m-auto">
+          <nav class="main-nav h-10 flex items-center justify-between">
+            <img class="h-8 block w-auto" src="/img/logo-horizontal.svg" />
+            <ul class="flex">
+              <li class="mr-4 font-bold"><a href="/">Home</a></li>
+              <li class="mr-4 font-bold"><a href="/podcast">Podcast</a></li>
+              <li class="mr-4 font-bold"><a href="/podcasts">Episodes</a></li>
+              <li>
+                <a class="cta-btn" href="#subscribe-now">
+                  Subscribe Now
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container m-auto">
+        {% block article %}
+          {{ content | safe }}
+        {% endblock %}
+      </main>
+    </div>
+
+    <footer class="container mx-auto pb-12 grid grid-cols-1 md:grid-cols-4">
+      <div class="logo">
+        <img src="/img/logo-vertical.svg" />
+        <p>&copy; Square Bracket eU <script>document.write((new Date()).getFullYear())</script></p>
+      </div>
+      <div class="nav-links">
+        <h4 class="mb-2 text-base sm:text-base text-indigo-600 dark:text-white font-bold tracking-tight">Site Links</h4>
+        <ul>
+          <li class="mb-2 font-bold"><a href="/">Home</a></li>
+          <li class="mb-2 font-bold"><a href="/podcast">Podcast</a></li>
+          <li class="mb-2 font-bold"><a href="/podcasts">Episodes</a></li>
+        </ul>
+      </div>
+      <div class="nav-rss">
+        <h4 class="mb-4 text-base sm:text-base text-indigo-600 dark:text-white font-bold tracking-tight">Subscribe to the Podcast</h4>
+        <ul>
+          {% for link in  sharing.podcast.rss_links %}
+            <li class="mb-2">
+              <a href="{{ link.link }}" target="_blank" class="flex items-center">
+                <span class="w-6 h-6 mr-4">{{ link.icon | safe }}</span>
+                <span class="font-bold">{{ link.name }}</span>
               </a>
             </li>
-          </ul>
-        </nav>
+          {% endfor %}
+        </ul>
       </div>
-    </header>
+      <div class="cta">
+        <a class="cta-btn" href="#subscribe-now">
+          Subscribe Now
+        </a>
+      </div>
 
-    <main class="container m-auto">
-      {% block article %}
-        {{ content | safe }}
-      {% endblock %}
-    </main>
-
-    <footer class="container m-auto">
-      <a href="/about/">{{ metadata.author.name }}</a>
+      {% if googleanalytics and not isdevelopment %}
+        <noscript>
+          <!-- Google Tag Manager (noscript) -->
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3QJJJ6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+          <!-- End Google Tag Manager (noscript) -->
+          <img src="/.netlify/functions/ga?v=1&_v=j83&t=pageview&dr=https%3A%2F%2Fno-script.com&_s=1&dh={{ metadata.domain | encodeURIComponent }}&dp={{ page.url | encodeURIComponent }}&ul=en-us&de=UTF-8&dt={{title|encodeURIComponent}}&tid={{googleanalytics}}" width="1" height="1" style="display:none" alt="">
+        </noscript>
+      {% endif %}
     </footer>
 
     <!-- Current page: {{ page.url | url }} -->
 
-    {% if googleanalytics and not isdevelopment %}
-      <noscript>
-        <!-- Google Tag Manager (noscript) -->
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3QJJJ6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        <!-- End Google Tag Manager (noscript) -->
-        <img src="/.netlify/functions/ga?v=1&_v=j83&t=pageview&dr=https%3A%2F%2Fno-script.com&_s=1&dh={{ metadata.domain | encodeURIComponent }}&dp={{ page.url | encodeURIComponent }}&ul=en-us&de=UTF-8&dt={{title|encodeURIComponent}}&tid={{googleanalytics}}" width="1" height="1" style="display:none" alt="">
-      </noscript>
-    {% endif %}
     {% block javascript_tail %}
     {% endblock %}
   </body>

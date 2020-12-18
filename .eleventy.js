@@ -65,9 +65,10 @@ const emailTemplateLiquid = fs.readFileSync(layoutPath, "utf8");
 const emailTemplate = engine.parse(emailTemplateLiquid);
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addDataExtension("yaml", (contents) =>
-    yaml.safeLoad(contents)
-  );
+  ["yaml", "yml"].forEach((ext) => {
+    eleventyConfig.addDataExtension(ext, (contents) => yaml.safeLoad(contents));
+  });
+
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);

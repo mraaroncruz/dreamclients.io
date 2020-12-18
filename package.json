@@ -8,7 +8,7 @@
     "clean": "rimraf _site",
     "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
     "serve:webpack": "webpack --mode development --watch",
-    "watch": "npm-run-all clean --parallel serve:*",
+    "serve": "npm-run-all clean --parallel serve:*",
     "js-build": "NODE_ENV=production webpack --mode production",
     "debug": "DEBUG=* eleventy && npm run test",
     "test": "mocha test/test*.js",
