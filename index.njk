@@ -6,13 +6,112 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 date: Last Modified
 ---
 
-<p>
-  This is a demo website based on 
-  <a href="https://www.industrialempathy.com/posts/eleventy-high-performance-blog/">eleventy-high-performance-blog</a>.
-</p>
+<section class="jumbotron lg:h-96 lg:min-h-screen">
+  <div class="lg:flex lg:items-center h-full">
+    <div class="jumbo-container">
+      <div class="lg:grid lg:grid-cols-1 lg:gap-x-16 lg:grid-cols-8 lg:items-center">
+        <div class="block max-w-xs my-12 lg:hidden jumbotron-image">
+          <img class="w-full" src="/img/landing-jumbo.svg" />
+        </div>
+        <div class="jumbotron-text mb-8 lg:mb-0 lg:col-span-4">
+          <h1 class="text-3xl sm:text-4xl  text-gray-800 dark:text-white font-extrabold">We Help Freelance<br>Software Developers<br>Find Their Dream Clients</h1>
+          <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 my-4">
+            Generate more high-quality leads that boost profit and make burnout a thing of the past.
+          </p>
+          <a class="inline-block text-center cta-btn-lg" href="https://forms.gle/pQW2cX9uHW58RSwi7" target="_blank">Book a Session</a>
+        </div>
 
-<div id="posts">
-  <h2>Posts</h2>
-  {% set postslist = collections.posts %}
-  {% include "postslist.njk" %}
-</div>
+        <div class="hidden lg:block"></div>
+
+        <div class="hidden lg:block jumbotron-image col-span-3">
+          <img class="w-full" src="/img/landing-jumbo.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">The Dreaded Feast and Famine Cycle</h2>
+  <p class="text-lg mb-4">
+    Most freelance software developers go through something called the feast and famine cycle. This boils down to a cycle of having too much or the right amount of work followed by a cycle of having now work or reduced work.
+  </p>
+  <p class="text-lg">
+    The worst part of the famine part of cycle is that often we lose self confidence and are willing to take on questionable clients or reduce our rate out of fear.
+    <br>
+    And the feast part of the cycle can also be bad if we have too much work and can’t create our highest quality outputs because we are stretched so thinly. This then can kill your reputation, thus feeding back into your famine cycle.
+  </p>
+</section>
+
+<section class="py-12">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">Get More Clients</h2>
+  <p class="text-lg mb-4">
+    Luckily for all of us, this cycle can be stopped and there are systems to create a healthy and sustainable business, killing burnout before it starts.
+  </p>
+
+  <p class="text-lg mb-4">
+    You can get more, better clients in a predictable way so you will be able to schedule time off instead of working half days while on vacation.
+  </p>
+
+  <p class="text-lg">
+    You won’t need to compete on the race to the bottom for pricing on freelance developer marketplaces, but instead have clients telling you are the exact person they need and being willing to pay what you’re worth.
+  </p>
+</section>
+
+<section class="py-12">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">Repeatable, Consistent Leads</h2>
+  <p class="text-lg mb-4">
+    At DreamClients we coach and build tools to help freelance software developers like you create systems to:
+  </p>
+
+  <ul class="text-lg list-disc list-inside mb-4">
+    <li>Generate more leads</li>
+    <li>Make this lead generation more predictable</li>
+    <li>Attract higher quality customers</li>
+  </ul>
+
+  <p class="text-lg mb-4">
+    Lead generation is like writing code in a way.
+    <br>
+    Just because you write more lines of code, it doesn’t make your piece of software have more value.
+    <br>
+    If the code is low quality, all you’re doing is creating more, obnoxious, draining work in the future.
+  </p>
+
+  <p class="text-lg mb-4">
+    The same goes for leads. Bad leads want to argue on price. They don’t respect your time and make request after request, sometimes during your free time. They don’t respect your expertise, constantly asking for changes to things they are paying you a lot of cash to be an expert at.
+  </p>
+
+  <p class="text-lg">
+    What we do best is give you the tools to attract the best, high paying clients and repel the time and energy vampires.
+  </p>
+</section>
+
+<section id="subscribe-now" class="py-20 lg:py-12 lg:mb-32">
+  <div class="text-center flex items-center justify-center">
+    <div>
+      <h2 class="mb-4 text-3xl sm:text-4xl text-gray-800 dark:text-white font-extrabold tracking-tight">Book a Free Session</h2>
+      <p class="mb-4 text-normal text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+        DreamClients is currently doing free consulting calls for a freelance software developers.
+        <br>
+        We have openings from 9:00AM CEST to 10:00AM CEST weekdays (except holidays).
+      </p>
+      <a class="cta-btn-lg" href="https://forms.gle/pQW2cX9uHW58RSwi7" target="_blank">Book a Session</a>
+    </div>
+  </div>
+</section>
+
+<section class="mb-48">
+  <h2 class="text-3xl font-bold text-gray-800 mb-4">The Podcast</h2>
+
+  <p class="text-lg mb-4">
+    We have a podcast with segments where we interview successful freelancers and talk about ideas that we're thinking about. 
+  </p>
+
+  <a href="/podcast/" class="flex items-center">
+    <span class="mr-2 text-2xl underline text-indigo-800">Check out the podcast</span>
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 0C8.08257 0 5.28463 1.13422 3.22219 3.15386C1.15877 5.17261 0 7.91116 0 10.7667C0 13.6223 1.1588 16.3609 3.22219 18.3796C5.28468 20.3992 8.08257 21.5334 11 21.5334C13.9174 21.5334 16.7154 20.3992 18.7778 18.3796C20.8412 16.3608 22 13.6223 22 10.7667C22 7.91116 20.8412 5.17256 18.7778 3.15386C16.7153 1.1342 13.9174 0 11 0V0ZM14.1562 11.7593L9.78143 16.0413C9.2459 16.5655 8.37748 16.5646 7.84196 16.0404C7.30733 15.5153 7.30733 14.6662 7.84377 14.1421L11.2938 10.7667L7.84377 7.39143C7.30734 6.86726 7.30734 6.01814 7.84196 5.49309C8.37748 4.96892 9.2459 4.96804 9.78143 5.49221L14.1562 9.77419C14.4249 10.0363 14.5705 10.3958 14.5569 10.7667V10.8101C14.5569 11.1661 14.4131 11.507 14.1562 11.7593V11.7593Z" fill="#6C63FF"/>
+    </svg>
+  </a>
+</section>

@@ -1,11 +1,8 @@
 ---
 permalink: /podcast/
-layout: layouts/home.njk
+layout: layouts/podcasts.njk
 ---
 
-{% block javascript_tail %}
-  <script src="//cdn.podlove.org/web-player/5.x/embed.js"></script>
-{% endblock %}
 
 {% set latest = collections.latestPodcast %}
 {% set previous = collections.previousPodcast %}
@@ -60,7 +57,7 @@ layout: layouts/home.njk
       <p class="mb-4 text-normal text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-400 mt-2">
         Get practical tips via email and updates for when new episodes come out.
       </p>
-      <a class="cta-btn-lg" href="#">Subscribe Now</a>
+      <a class="cta-btn-lg" data-formkit-toggle="dab84f60e3" href="https://successful-author-1806.ck.page/dab84f60e3">Subscribe Now</a>
     </div>
   </div>
 </section>
@@ -95,7 +92,7 @@ layout: layouts/home.njk
   </div>
 </section>
 
-<section id="subscribe-now" class="py-16 mb-12">
+<section class="py-16 mb-12">
   <div class="text-center flex items-center justify-center">
     <div>
       <h2 class="text-3xl sm:text-4xl text-gray-800 dark:text-white font-extrabold tracking-tight">

@@ -85,7 +85,7 @@
     {% block javascript_head %}
     {% endblock %}
   </head>
-  <body class="px-4 sm:px-8 flex flex-col h-full justify-between">
+  <body class="px-4 sm:px-8 flex flex-col h-full justify-between antialiased">
     <div class="top-wrapper lg:max-w-screen-lg mx-auto">
       <header class="py-4">
         <div class="container mx-auto">
@@ -103,9 +103,11 @@
               <li class="mr-4 font-bold"><a href="/podcast">Podcast</a></li>
               <li class="mr-4 font-bold"><a href="/podcasts">Episodes</a></li>
               <li>
-                <a class="cta-btn" href="#subscribe-now">
-                  Subscribe Now
-                </a>
+                {% block ctaHeader %}
+                  <a class="cta-btn" href="#subscribe-now">
+                    Book a Session
+                  </a>
+                {% endblock %}
               </li>
             </ul>
           </nav>
@@ -114,9 +116,11 @@
             <li class="mb-4 font-bold"><a href="/podcast">Podcast</a></li>
             <li class="mb-8 font-bold"><a href="/podcasts">Episodes</a></li>
             <li>
-              <a class="cta-btn" href="#subscribe-now">
-                Subscribe Now
-              </a>
+              {% block ctaMobileHeader %}
+                <a class="cta-btn" href="#subscribe-now">
+                  Book a Session
+                </a>
+              {% endblock %}
             </li>
           </ul>
         </div>
@@ -156,9 +160,11 @@
         </ul>
       </div>
       <div class="cta self-auto">
-        <a class="cta-btn" href="#subscribe-now">
-          Subscribe Now
-        </a>
+        {% block ctaFooter %}
+          <a class="cta-btn" href="#subscribe-now">
+            Book a Session
+          </a>
+        {% endblock %}
       </div>
 
       {% if googleanalytics and not isdevelopment %}
