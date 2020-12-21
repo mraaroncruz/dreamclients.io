@@ -1,11 +1,18 @@
 module.exports = {
-  purge: [
-    "./_site/**/*.html",
-    "./_site/**/*.js",
-    "*/**/*.njk",
-    "*/**/*.liquid",
-    "./index.njk",
-  ],
+  purge: {
+    content: [
+      "./_site/**/*.html",
+      "./_site/**/*.js",
+      "./**/*.njk",
+      "*.njk",
+      "*/**/*.liquid",
+    ],
+    options: {
+      safelist: {
+        greedy: [/grid-cols-\d+$/],
+      },
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
