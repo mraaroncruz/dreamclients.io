@@ -4,12 +4,13 @@
   "license": "MIT",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
   "scripts": {
-    "build": "eleventy && npm run js-build",
+    "build": "npm-run-all clean build:js build:site",
     "clean": "rimraf _site",
     "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
     "serve:webpack": "webpack --mode development --watch",
     "serve": "npm-run-all clean --parallel serve:*",
-    "js-build": "NODE_ENV=production webpack --mode production",
+    "build:js": "NODE_ENV=production webpack --mode production",
+    "build:site": "eleventy",
     "debug": "DEBUG=* eleventy && npm run test",
     "test": "mocha test/test*.js",
     "test-watch": "mocha test/test*.js --watch"
