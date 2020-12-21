@@ -4,6 +4,7 @@ module.exports = {
     "./_site/**/*.js",
     "*/**/*.njk",
     "*/**/*.liquid",
+    "./index.njk",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
