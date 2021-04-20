@@ -14,7 +14,7 @@ summary: An intro to the DreamClients podcast
 durationSeconds: 188
 ---
 
-## An Introduction to DreamClients Podcast
+## An Introduction To The DreamClients Podcast
 
 Hi everyone. I wanted to take a minute to introduce this new podcast and give you an idea of what it is about.
 

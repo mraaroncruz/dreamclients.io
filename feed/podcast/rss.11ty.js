@@ -56,7 +56,7 @@ const renderEpisode = (podcast, episode) => {
     isExplicit: false
     itunesAuthor: Aaron Cruz
     itunesExplicit: false
-    itunesSubtitle: An intro to the DreamClients podcast
+    itunesSubtitle: An Intro To The DreamClients Podcast
     itunesDuration: 188
 
 
