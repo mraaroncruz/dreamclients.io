@@ -4,27 +4,30 @@ pagination:
   data: collections.podcasts
   size: 7
   alias: podcast
-permalink: "podcasts/index.html"
-layout: "layouts/podcasts.njk"
+permalink: "episodes/index.html"
+layout: "layouts/episodes.njk"
 ---
-
-{% block javascript_tail %}
-  <script src="//cdn.podlove.org/web-player/5.x/embed.js"></script>
-{% endblock %}
 
 <h1 class="max-w-screen-lg mx-auto my-12 text-3xl sm:text-4xl text-gray-800 dark:text-white font-bold tracking-tight">All Episodes</h1>
 
-{% for podcast in collections.publishedPodcasts %}
+{% for episode in episodes %}
   <section class="mb-24 max-w-screen-lg mx-auto">
     <div class="episode">
       <div class="latest">
-        <h2 class="text-2xl sm:text-3xl">{{ podcast.data.title }}</h2>
+        <h2 class="text-2xl sm:text-3xl">{{ episode.title }}</h2>
 
         <p class="mb-4 text-normal text-md sm:text-md font-medium text-gray-600 dark:text-gray-400 mt-2">
-          {{ podcast.data.summary }}
+          {{ episode.summary }}
         </p>
 
-        {% podcastPlayer podcast %}
+        <iframe
+          height="200px"
+          width="100%"
+          frameborder="no"
+          scrolling="no"
+          seamless
+          src="https://player.simplecast.com/{{episode.id}}?dark=false"
+        ></iframe>
       </div>
     </div>
   </section>

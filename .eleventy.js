@@ -201,6 +201,8 @@ module.exports = function (eleventyConfig) {
   //   }
   // });
 
+  eleventyConfig.addCollection("");
+
   eleventyConfig.addCollection("latestPodcast", function (collection) {
     let filtered = collection
       .getFilteredByTag("podcasts")

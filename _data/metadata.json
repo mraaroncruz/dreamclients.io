@@ -27,5 +27,8 @@
   },
   "publisher": {
     "name": "dreamclients.io"
+  },
+  "simplecast": {
+    "podcastId": "84b3c029-46fd-4ae6-bc13-e5230d7fbb92"
   }
 }

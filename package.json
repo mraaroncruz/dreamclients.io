@@ -60,6 +60,7 @@
     "@ampproject/toolbox-optimizer": "^2.5.5",
     "@podlove/web-player": "^5.3.1",
     "@saschazar/wasm-avif": "^1.0.0",
+    "axios": "^0.21.1",
     "clean-css": "^4.2.3",
     "concurrently": "^5.2.0",
     "csp-hash-generator": "0.0.3",
