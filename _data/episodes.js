@@ -18,7 +18,9 @@ const client = {
   async episodes() {
     const url = `https://api.simplecast.com/podcasts/${podcastId}/episodes`;
     const res = await axios.get(url);
-    return res.data.collection;
+    return res.data.collection.filter(
+      (episode) => episode.status === "published"
+    );
   },
 
   async episode(episodeId) {
