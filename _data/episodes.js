@@ -19,7 +19,7 @@ const client = {
     const url = `https://api.simplecast.com/podcasts/${podcastId}/episodes`;
     const res = await axios.get(url);
     return res.data.collection.filter(
-      (episode) => episode.status === "published"
+      (episode) => episode.status === "published" && !episode.is_hidden
     );
   },
 
