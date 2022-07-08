@@ -12,3 +12,6 @@
     [headers.values]
       Content-Type = "image/avif"
       Content-Disposition = "inline"
+
+[context.production]
+  environment = { NODE_VERSION = "14.17.0" }
