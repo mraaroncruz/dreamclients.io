@@ -80,7 +80,7 @@
     "purgecss": "^2.3.0",
     "request": "^2.88.2",
     "rollup": "^2.23.0",
-    "sharp": "^0.25.4",
+    "sharp": "^0.30.5",
     "tailwindcss-cli": "^0.1.2",
     "twitter": "^1.7.1"
   }
