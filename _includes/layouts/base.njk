@@ -101,8 +101,6 @@
               </svg>
             </a>
             <ul class="hidden md:flex">
-              <li class="mr-4 font-bold"><a href="/">Podcast</a></li>
-              <li class="mr-4 font-bold"><a href="/episodes">Episodes</a></li>
               <li>
                 {% block ctaHeader %}
                   <a class="cta-btn" href="#subscribe-now">
@@ -113,9 +111,6 @@
             </ul>
           </nav>
           <ul id="mobile-menu" class="flex flex-col hidden mt-8 md:hidden">
-            <li class="mb-4 font-bold"><a href="/">Home</a></li>
-            <li class="mb-4 font-bold"><a href="/podcast">Podcast</a></li>
-            <li class="mb-8 font-bold"><a href="/episodes">Episodes</a></li>
             <li>
               {% block ctaMobileHeader %}
                 <a class="cta-btn" href="#subscribe-now">
@@ -137,14 +132,12 @@
     <footer class="container mx-auto pb-12 lg:flex lg:justify-between">
       <div class="logo mb-8 lg:mb-0">
         <img src="/img/logo-vertical.svg" />
-        <p>&copy; Square Bracket eU <script>document.write((new Date()).getFullYear())</script></p>
+        <p>&copy; <a href="https://squarebracket.io">Square Bracket eU</a> <script>document.write((new Date()).getFullYear())</script></p>
       </div>
       <div class="nav-links mb-8 lg:mb-0">
         <h4 class="mb-2 text-base sm:text-base text-indigo-600 dark:text-white font-bold tracking-tight">Site Links</h4>
         <ul>
           <li class="mb-2 font-bold"><a href="/">Home</a></li>
-          <li class="mb-2 font-bold"><a href="/podcast">Podcast</a></li>
-          <li class="mb-2 font-bold"><a href="/episodes">Episodes</a></li>
         </ul>
       </div>
       <div class="nav-rss mb-12 lg:mb-0">
